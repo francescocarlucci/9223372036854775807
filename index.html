@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>9223372036854775807</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 90vh;
+                font-size: 5vw;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 20px;
+                margin: 0;
+            }
+
+            #timestamp {
+                max-width: 90%;
+                word-wrap: break-word;
+            }
+
+            #info p {
+                font-size: 1rem;
+                color: grey;
+                margin-top: 10px;
+                position: absolute;
+                bottom: 40px;
+            }
+
+            #info a {
+                color: grey;
+                text-decoration: none;
+            }
+
+            @media (max-width: 600px) {
+                body {
+                    font-size: 8vw;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="timestamp"></div>
+
+        <div id="info">
+            <p><a id="about" href="#">About</a></p>
+        </div>
+
+        <script>
+            function updateTimestamp() {
+                const now = BigInt(Date.now());
+                document.getElementById("timestamp").innerText = now.toString();
+            }
+            setInterval(updateTimestamp, 100);
+        </script>
+
+    </body>
+</html>
